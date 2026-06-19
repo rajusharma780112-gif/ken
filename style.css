@@ -1,1 +1,114 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
 
+body{
+background:#0b0b0b;
+color:white;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 10%;
+background:#111;
+position:sticky;
+top:0;
+}
+
+.logo{
+color:gold;
+font-size:30px;
+font-weight:bold;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 10%;
+}
+
+.hero h1{
+font-size:70px;
+max-width:900px;
+}
+
+.hero span{
+color:gold;
+}
+
+.hero p{
+margin-top:25px;
+font-size:20px;
+color:#bbb;
+}
+
+.btn{
+display:inline-block;
+background:gold;
+color:black;
+padding:15px 30px;
+margin-top:30px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+
+section{
+padding:100px 10%;
+}
+
+h2{
+font-size:45px;
+margin-bottom:40px;
+text-align:center;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#151515;
+padding:35px;
+border-radius:15px;
+border:1px solid #222;
+}
+
+.card h3{
+color:gold;
+margin-bottom:15px;
+}
+
+input,
+textarea{
+width:100%;
+padding:18px;
+background:#151515;
+border:none;
+color:white;
+margin-bottom:20px;
+border-radius:10px;
+}
+
+footer{
+padding:60px;
+text-align:center;
+border-top:1px solid #222;
+}
