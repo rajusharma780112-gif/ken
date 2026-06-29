@@ -276,3 +276,18 @@ transition:.3s;
 .whatsapp-btn:hover{
 transform:scale(1.1);
 }
+.section-subtitle{
+max-width:850px;
+margin:0 auto 60px;
+text-align:center;
+color:#bdbdbd;
+font-size:18px;
+line-height:1.8;
+}
+
+.stars{
+font-size:24px;
+color:#d4af37;
+margin-bottom:20px;
+letter-spacing:4px;
+}
