@@ -1,106 +1,109 @@
-// Smooth scroll for all links
+/* =========================
+   SMOOTH SCROLL (FIXED)
+========================= */
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-e.preventDefault();
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
 
-document.querySelector(this.getAttribute('href')).scrollIntoView({
-behavior: 'smooth'
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    });
 });
 
-});
+/* =========================
+   MOBILE MENU
+========================= */
+
+const nav = document.querySelector("nav");
+
+const menuBtn = document.createElement("div");
+menuBtn.innerHTML = "☰";
+menuBtn.classList.add("menu-btn");
+
+document.querySelector(".nav").appendChild(menuBtn);
+
+menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("active");
 });
 
+/* =========================
+   SCROLL REVEAL (UPGRADED)
+========================= */
 
-// Reveal animation
-const cards = document.querySelectorAll(".card");
+const revealElements = document.querySelectorAll(
+    ".service-card, .case-card, .testimonial-card, .feature, .numbers div"
+);
 
 const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, { threshold: 0.15 });
 
-entries.forEach(entry => {
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity = "1";
-entry.target.style.transform = "translateY(0)";
-
-}
-
+revealElements.forEach(el => {
+    el.classList.add("hidden");
+    observer.observe(el);
 });
 
-});
+/* =========================
+   SCROLL TO TOP BUTTON
+========================= */
 
-cards.forEach(card=>{
-
-card.style.opacity="0";
-card.style.transform="translateY(40px)";
-card.style.transition="all .7s ease";
-
-observer.observe(card);
-
-});
-
-
-// Scroll-to-top button
 const topBtn = document.createElement("button");
 
 topBtn.innerHTML = "↑";
 
-topBtn.style.position = "fixed";
-topBtn.style.bottom = "30px";
-topBtn.style.right = "30px";
-topBtn.style.width = "55px";
-topBtn.style.height = "55px";
-topBtn.style.border = "none";
-topBtn.style.borderRadius = "50%";
-topBtn.style.background = "#d4af37";
-topBtn.style.color = "#000";
-topBtn.style.fontSize = "20px";
-topBtn.style.fontWeight = "700";
-topBtn.style.cursor = "pointer";
-topBtn.style.display = "none";
+Object.assign(topBtn.style, {
+    position: "fixed",
+    bottom: "30px",
+    right: "30px",
+    width: "55px",
+    height: "55px",
+    border: "none",
+    borderRadius: "50%",
+    background: "#3B82F6",
+    color: "#fff",
+    fontSize: "20px",
+    fontWeight: "700",
+    cursor: "pointer",
+    display: "none",
+    zIndex: "9999"
+});
 
 document.body.appendChild(topBtn);
 
-window.addEventListener("scroll",()=>{
-
-if(window.scrollY>400){
-
-topBtn.style.display="block";
-
-}else{
-
-topBtn.style.display="none";
-
-}
-
+window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 400 ? "block" : "none";
 });
 
-topBtn.addEventListener("click",()=>{
-
-window.scrollTo({
-
-top:0,
-behavior:"smooth"
-
+topBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 });
 
+/* =========================
+   HEADER SHADOW (MODERN)
+========================= */
+
+window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+
+    if (!header) return;
+
+    if (window.scrollY > 50) {
+        header.style.boxShadow = "0 10px 30px rgba(0,0,0,.35)";
+        header.style.backdropFilter = "blur(15px)";
+    } else {
+        header.style.boxShadow = "none";
+    }
 });
-
-
-// Header shadow effect
-window.addEventListener("scroll",()=>{
-
-const header=document.querySelector("header");
-
-if(window.scrollY>50){
-
-header.style.boxShadow="0 10px 30px rgba(0,0,0,.4)";
-
-}else{
-
-header.style.boxShadow="none";
-
-}
-
-});
-
