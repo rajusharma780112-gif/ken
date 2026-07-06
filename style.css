@@ -1175,7 +1175,19 @@ header .btn{
 
 }
 
+.footer-contact{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
 
+.footer-contact a{
+    color:#aab7c8;
+}
+
+.footer-contact a:hover{
+    color:#3B82F6;
+}
 
 
 
