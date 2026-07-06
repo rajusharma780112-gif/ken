@@ -204,8 +204,8 @@ background:#3B82F6;
 
 .hero{
 
-padding-top:170px;
-padding-bottom:120px;
+padding-top:150px;
+padding-bottom:90px;
 
 }
 
@@ -269,14 +269,20 @@ align-items:center;
 
 }
 
+.hero-image{
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
 .hero-image img{
 
 width:100%;
 max-width:520px;
 border-radius:25px;
 box-shadow:0 30px 70px rgba(0,0,0,.45);
-
-}
 
 }
 
