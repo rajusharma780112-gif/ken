@@ -1,90 +1,107 @@
 // ==========================
-// SMOOTH SCROLL (FIXED)
+// SMOOTH SCROLL
 // ==========================
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
+
+anchor.addEventListener("click", function(e){
+
 e.preventDefault();
 
-const target = document.querySelector(this.getAttribute('href'));
+const target=document.querySelector(this.getAttribute("href"));
 
-if (target) {
+if(target){
+
 target.scrollIntoView({
-behavior: 'smooth'
-});
-}
-
-});
+behavior:"smooth"
 });
 
-
-// ==========================
-// HEADER SHADOW ON SCROLL
-// ==========================
-
-window.addEventListener("scroll", () => {
-
-const header = document.querySelector("header");
-
-if (window.scrollY > 50) {
-header.style.boxShadow = "0 10px 30px rgba(0,0,0,0.4)";
-} else {
-header.style.boxShadow = "none";
 }
 
 });
 
+});
+
 
 // ==========================
-// FADE IN ANIMATION (SCROLL)
+// HEADER SHADOW
 // ==========================
 
-const elements = document.querySelectorAll(
-".service-card, .case-card, .testimonial-card, .contact-card"
+const header=document.querySelector("header");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>40){
+
+header.style.boxShadow="0 12px 35px rgba(0,0,0,.35)";
+
+}else{
+
+header.style.boxShadow="none";
+
+}
+
+});
+
+
+// ==========================
+// SCROLL ANIMATION
+// ==========================
+
+const animatedItems=document.querySelectorAll(
+
+".service-card,.case-card,.testimonial-card,.contact-card"
+
 );
 
-const observer = new IntersectionObserver(entries => {
+const observer=new IntersectionObserver((entries)=>{
 
-entries.forEach(entry => {
+entries.forEach(entry=>{
 
-if (entry.isIntersecting) {
-entry.target.style.opacity = 1;
-entry.target.style.transform = "translateY(0)";
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0)";
+
 }
 
 });
 
-}, {
-threshold: 0.15
+},{
+threshold:.15
 });
 
-elements.forEach(el => {
+animatedItems.forEach(item=>{
 
-el.style.opacity = 0;
-el.style.transform = "translateY(40px)";
-el.style.transition = "all 0.6s ease";
+item.style.opacity="0";
+item.style.transform="translateY(40px)";
+item.style.transition="all .7s ease";
 
-observer.observe(el);
+observer.observe(item);
 
 });
 
 
 // ==========================
-// WHATSAPP FLOAT BEHAVIOR
+// WHATSAPP BUTTON
 // ==========================
 
-const waButton = document.querySelector(".whatsapp-float");
+const whatsapp=document.querySelector(".whatsapp-float");
 
-if (waButton) {
+if(whatsapp){
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-if (window.scrollY > 300) {
-waButton.style.transform = "scale(1)";
-waButton.style.opacity = "1";
-} else {
-waButton.style.transform = "scale(0.9)";
-waButton.style.opacity = "0.8";
+if(window.scrollY>300){
+
+whatsapp.style.opacity="1";
+whatsapp.style.transform="scale(1)";
+
+}else{
+
+whatsapp.style.opacity=".85";
+whatsapp.style.transform="scale(.92)";
+
 }
 
 });
@@ -93,34 +110,92 @@ waButton.style.opacity = "0.8";
 
 
 // ==========================
-// ACTIVE NAV LINK HIGHLIGHT
+// ACTIVE NAVIGATION
 // ==========================
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll("nav a");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-let current = "";
+let current="";
 
-sections.forEach(section => {
+sections.forEach(section=>{
 
-const sectionTop = section.offsetTop;
+const top=section.offsetTop;
 
-if (window.scrollY >= sectionTop - 200) {
-current = section.getAttribute("id");
+if(window.scrollY>=top-200){
+
+current=section.getAttribute("id");
+
 }
 
 });
 
-navLinks.forEach(link => {
+navLinks.forEach(link=>{
 
 link.classList.remove("active");
 
-if (link.getAttribute("href") === "#" + current) {
+if(link.getAttribute("href")==="#"+current){
+
 link.classList.add("active");
+
 }
 
 });
 
 });
+
+
+// ==========================
+// MOBILE MENU
+// ==========================
+
+const menuToggle=document.querySelector(".menu-toggle");
+const mobileMenu=document.querySelector(".mobile-menu");
+const menuOverlay=document.querySelector(".menu-overlay");
+
+if(menuToggle){
+
+menuToggle.addEventListener("click",()=>{
+
+mobileMenu.classList.add("active");
+menuOverlay.classList.add("active");
+
+});
+
+}
+
+if(menuOverlay){
+
+menuOverlay.addEventListener("click",()=>{
+
+mobileMenu.classList.remove("active");
+menuOverlay.classList.remove("active");
+
+});
+
+}
+
+document.querySelectorAll(".mobile-menu a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+mobileMenu.classList.remove("active");
+menuOverlay.classList.remove("active");
+
+});
+
+});
+const mobileClose=document.querySelector(".mobile-close");
+
+if(mobileClose){
+
+mobileClose.addEventListener("click",()=>{
+
+mobileMenu.classList.remove("active");
+menuOverlay.classList.remove("active");
+
+});
+
+}
