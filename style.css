@@ -130,7 +130,16 @@ height:85px;
 
 font-size:1.7rem;
 font-weight:800;
+display:flex;
+align-items:center;
+gap:10px;
 
+}
+
+.logo-mark{
+width:28px;
+height:28px;
+flex-shrink:0;
 }
 
 .logo span{
@@ -329,6 +338,7 @@ gap:30px;
 
 .service-card{
 
+display:block;
 background:#0c1a2d;
 padding:35px;
 border-radius:18px;
@@ -1187,6 +1197,129 @@ header .btn{
 
 .footer-contact a:hover{
     color:#3B82F6;
+}
+
+/* ===== INNER PAGE HERO (Service pages, Blog) ===== */
+.page-hero{
+    padding-top:150px;
+    padding-bottom:60px;
+    text-align:center;
+}
+.page-hero .tag{
+    margin:0 auto 20px;
+}
+.page-hero h1{
+    font-size:2.6rem;
+    font-weight:800;
+    margin-bottom:18px;
+}
+.page-hero h1 span{
+    color:#3B82F6;
+}
+.page-hero p{
+    color:#a6b5c7;
+    max-width:640px;
+    margin:0 auto;
+    line-height:1.7;
+}
+.page-crumb{
+    font-size:.85rem;
+    color:#6b7c93;
+    margin-bottom:18px;
+}
+.page-crumb a{
+    color:#8fa3bb;
+}
+.page-crumb a:hover{
+    color:#3B82F6;
+}
+
+/* ===== PROSE CONTENT ===== */
+.prose{
+    max-width:760px;
+    margin:0 auto;
+}
+.prose h2{
+    font-size:1.6rem;
+    font-weight:700;
+    margin:40px 0 14px;
+    color:#fff;
+}
+.prose p{
+    color:#a6b5c7;
+    font-size:1.02rem;
+    line-height:1.85;
+    margin-bottom:18px;
+}
+.prose ul{
+    margin:0 0 20px;
+}
+.prose ul li{
+    color:#a6b5c7;
+    font-size:1rem;
+    line-height:1.8;
+    padding-left:24px;
+    position:relative;
+    margin-bottom:8px;
+}
+.prose ul li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:11px;
+    width:6px;
+    height:6px;
+    background:#3B82F6;
+    border-radius:50%;
+}
+
+/* ===== BLOG GRID ===== */
+.blog-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+.blog-card{
+    display:block;
+    background:#0c1a2d;
+    padding:30px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.05);
+    transition:.35s;
+}
+.blog-card:hover{
+    transform:translateY(-8px);
+    border-color:#3B82F6;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+.blog-card span.tag-label{
+    font-size:.75rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:#3B82F6;
+    display:block;
+    margin-bottom:12px;
+}
+.blog-card h3{
+    font-size:1.2rem;
+    margin-bottom:12px;
+    color:#fff;
+}
+.blog-card p{
+    color:#a6b5c7;
+    font-size:.92rem;
+    line-height:1.6;
+    margin-bottom:14px;
+}
+.blog-card-link{
+    font-size:.85rem;
+    font-weight:700;
+    color:#3B82F6;
+}
+
+@media (max-width: 900px){
+    .blog-grid{ grid-template-columns:1fr; }
 }
 
 
