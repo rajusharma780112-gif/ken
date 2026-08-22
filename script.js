@@ -199,3 +199,25 @@ menuOverlay.classList.remove("active");
 });
 
 }
+
+// ==========================
+// PORTFOLIO FILTERS
+// ==========================
+
+const filterPills = document.querySelectorAll('.filter-pill');
+const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+if (filterPills.length && portfolioCards.length) {
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      filterPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const filter = pill.dataset.filter;
+      portfolioCards.forEach(card => {
+        const matches = filter === 'all' || card.dataset.industry === filter;
+        card.classList.toggle('is-hidden', !matches);
+      });
+    });
+  });
+}
+
