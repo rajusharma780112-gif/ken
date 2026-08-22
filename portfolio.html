@@ -122,13 +122,21 @@ Book Strategy Call
 <div class="container">
 
 <div class="portfolio-filters">
-<button class="filter-pill active" data-filter="all">All</button>
-<button class="filter-pill" data-filter="events">Events</button>
-<button class="filter-pill" data-filter="f&b">F&B</button>
-<button class="filter-pill" data-filter="fmcg">FMCG</button>
-<button class="filter-pill" data-filter="fashion">Fashion</button>
-<button class="filter-pill" data-filter="finance">Finance</button>
-<button class="filter-pill" data-filter="tech">Tech</button>
+<button class="filter-pill active" data-filter="all">View All</button>
+<div class="industry-dropdown">
+<button class="filter-pill industry-toggle" id="industry-toggle" aria-expanded="false">
+<span id="industry-label">Industries</span> <i class="fa-solid fa-chevron-down"></i>
+</button>
+<ul class="industry-menu" id="industry-menu">
+<li data-value="all" class="active">All Industries</li>
+<li data-value="events">Events</li>
+<li data-value="f&amp;b">F&amp;B</li>
+<li data-value="fmcg">FMCG</li>
+<li data-value="fashion">Fashion</li>
+<li data-value="finance">Finance</li>
+<li data-value="tech">Tech</li>
+</ul>
+</div>
 </div>
 
 <div class="portfolio-grid">
