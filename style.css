@@ -130,7 +130,8 @@ gap:20px;
 .nav-links-group{
 display:flex;
 align-items:center;
-gap:26px;
+gap:22px;
+min-width:0;
 }
 
 .nav-actions-group{
@@ -138,6 +139,7 @@ display:flex;
 align-items:center;
 justify-content:flex-end;
 gap:14px;
+min-width:0;
 }
 
 .nav-actions-group .btn{
@@ -179,7 +181,7 @@ nav a{
 
 color:#d5dbe5;
 font-weight:500;
-font-size:.85rem;
+font-size:.92rem;
 transition:.3s;
 
 }
