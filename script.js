@@ -204,20 +204,55 @@ menuOverlay.classList.remove("active");
 // PORTFOLIO FILTERS
 // ==========================
 
-const filterPills = document.querySelectorAll('.filter-pill');
+const viewAllPill = document.querySelector('.filter-pill[data-filter="all"]');
+const industryToggle = document.getElementById('industry-toggle');
+const industryMenu = document.getElementById('industry-menu');
+const industryLabel = document.getElementById('industry-label');
 const portfolioCards = document.querySelectorAll('.portfolio-card');
 
-if (filterPills.length && portfolioCards.length) {
-  filterPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      filterPills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      const filter = pill.dataset.filter;
-      portfolioCards.forEach(card => {
-        const matches = filter === 'all' || card.dataset.industry === filter;
-        card.classList.toggle('is-hidden', !matches);
+if (portfolioCards.length) {
+
+  const applyFilter = (value, label) => {
+    portfolioCards.forEach(card => {
+      const matches = value === 'all' || card.dataset.industry === value;
+      card.classList.toggle('is-hidden', !matches);
+    });
+    if (viewAllPill) viewAllPill.classList.toggle('active', value === 'all');
+    if (industryLabel) industryLabel.textContent = value === 'all' ? 'Industries' : label;
+  };
+
+  if (viewAllPill) {
+    viewAllPill.addEventListener('click', () => {
+      applyFilter('all', 'Industries');
+      if (industryMenu) {
+        industryMenu.querySelectorAll('li').forEach(li => li.classList.toggle('active', li.dataset.value === 'all'));
+      }
+    });
+  }
+
+  if (industryToggle && industryMenu) {
+    industryToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = industryMenu.classList.toggle('is-open');
+      industryToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    industryMenu.querySelectorAll('li').forEach(item => {
+      item.addEventListener('click', () => {
+        industryMenu.querySelectorAll('li').forEach(li => li.classList.remove('active'));
+        item.classList.add('active');
+        applyFilter(item.dataset.value, item.textContent);
+        industryMenu.classList.remove('is-open');
+        industryToggle.setAttribute('aria-expanded', 'false');
       });
     });
-  });
+
+    document.addEventListener('click', (e) => {
+      if (!industryToggle.contains(e.target) && !industryMenu.contains(e.target)) {
+        industryMenu.classList.remove('is-open');
+        industryToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 }
 
