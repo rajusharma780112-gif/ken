@@ -143,8 +143,8 @@ min-width:0;
 }
 
 .nav-actions-group .btn{
-    padding:7px 16px;
-    font-size:.72rem;
+    padding:9px 20px;
+    font-size:.8rem;
     white-space:nowrap;
 }
 
@@ -209,6 +209,10 @@ color:white;
 font-weight:600;
 transition:.35s;
 
+}
+
+.btn-icon{
+display:none;
 }
 
 .btn:hover{
@@ -991,6 +995,78 @@ background:#1ebe5d;
 
 /* ---------------- TABLETS ---------------- */
 
+/* ===== HAMBURGER MENU TOGGLE ===== */
+.menu-toggle{
+    display:none;
+    flex-shrink:0;
+    width:38px;
+    height:38px;
+    background:transparent;
+    border:none;
+    color:#fff;
+    font-size:1.4rem;
+    cursor:pointer;
+    padding:8px;
+}
+
+/* ===== MOBILE MENU PANEL ===== */
+.menu-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    z-index:1000;
+    opacity:0;
+    transition:opacity .3s ease;
+}
+.menu-overlay.active{
+    display:block;
+    opacity:1;
+}
+
+.mobile-menu{
+    position:fixed;
+    top:0;
+    right:0;
+    width:min(320px,80%);
+    height:100vh;
+    background:#0c1a2d;
+    z-index:1001;
+    padding:80px 30px 30px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    transform:translateX(100%);
+    transition:transform .35s ease;
+    border-left:1px solid rgba(255,255,255,.08);
+}
+.mobile-menu.active{
+    transform:translateX(0);
+}
+.mobile-menu a{
+    color:#d5dbe5;
+    font-weight:500;
+    padding:16px 0;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    font-size:1.05rem;
+    text-align:center;
+    transition:.25s;
+}
+.mobile-menu a:hover{
+    color:#3B82F6;
+    background:rgba(59,130,246,.06);
+}
+.mobile-close{
+    position:absolute;
+    top:24px;
+    right:24px;
+    background:transparent;
+    border:none;
+    color:#fff;
+    font-size:1.6rem;
+    cursor:pointer;
+}
+
 @media (max-width: 992px){
 
 .container{
@@ -1072,7 +1148,11 @@ nav{
 
 header .btn{
 
-    display:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px 14px;
+    font-size:.7rem;
 }
 
 .hero-content,
@@ -1247,8 +1327,18 @@ footer > .container.footer-grid > div{
 
 header .btn{
 
-    padding:8px 14px;
+    padding:9px;
+    width:38px;
+    height:38px;
     font-size:.75rem;
+}
+
+.btn-text{
+    display:none;
+}
+.btn-icon{
+    display:inline-block !important;
+    margin:0;
 }
 
 .hero h1{
@@ -1300,78 +1390,6 @@ header .btn{
 
 .footer-contact a:hover{
     color:#3B82F6;
-}
-
-/* ===== HAMBURGER MENU TOGGLE ===== */
-.menu-toggle{
-    display:none;
-    flex-shrink:0;
-    width:38px;
-    height:38px;
-    background:transparent;
-    border:none;
-    color:#fff;
-    font-size:1.4rem;
-    cursor:pointer;
-    padding:8px;
-}
-
-/* ===== MOBILE MENU PANEL ===== */
-.menu-overlay{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.6);
-    z-index:1000;
-    opacity:0;
-    transition:opacity .3s ease;
-}
-.menu-overlay.active{
-    display:block;
-    opacity:1;
-}
-
-.mobile-menu{
-    position:fixed;
-    top:0;
-    right:0;
-    width:min(320px,80%);
-    height:100vh;
-    background:#0c1a2d;
-    z-index:1001;
-    padding:80px 30px 30px;
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-    transform:translateX(100%);
-    transition:transform .35s ease;
-    border-left:1px solid rgba(255,255,255,.08);
-}
-.mobile-menu.active{
-    transform:translateX(0);
-}
-.mobile-menu a{
-    color:#d5dbe5;
-    font-weight:500;
-    padding:16px 0;
-    border-bottom:1px solid rgba(255,255,255,.06);
-    font-size:1.05rem;
-    text-align:center;
-    transition:.25s;
-}
-.mobile-menu a:hover{
-    color:#3B82F6;
-    background:rgba(59,130,246,.06);
-}
-.mobile-close{
-    position:absolute;
-    top:24px;
-    right:24px;
-    background:transparent;
-    border:none;
-    color:#fff;
-    font-size:1.6rem;
-    cursor:pointer;
 }
 
 /* ===== INNER PAGE HERO (Service pages, Blog) ===== */
