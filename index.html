@@ -46,6 +46,49 @@ content="Kentek Media helps brands across Trading, FMCG, Fintech, Fashion, Finan
     "addressRegion": "Maharashtra",
     "addressCountry": "IN"
   },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Daniel Brooks"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "reviewBody": "The Meta Ads campaigns Kentek Media ran for us had a direct, measurable impact on revenue. It's rare to see paid social actually move the needle this clearly for an FMCG brand."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Sofia Martinez"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "reviewBody": "Between the SEO work and the website redesign, everything just feels right for the brand. It's the first time our site has actually matched the quality of our product."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Ethan Williams"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "reviewBody": "Our ROAS tripled after Kentek Media took over. That's not a small improvement — that's a completely different return on the same ad spend."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Arjun Verma"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "reviewBody": "Sales are up 200% and our cost per acquisition actually came down at the same time. Usually you get one or the other — Kentek Media delivered both."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Hana Kim"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "reviewBody": "The graphic design and ad creative Kentek Media put together were sharp and consistent across every campaign. It's made our brand look far more established."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Amara James"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "reviewBody": "Google Ads combined with Google Maps optimization drove a 72% increase in bookings for us. That kind of jump is hard to argue with."
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "6"
+  },
   "makesOffer": [
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO Strategy"}},
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Performance Marketing"}},
@@ -97,26 +140,29 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
 <a href="#home">Home</a>
 <a href="#services">Services</a>
-<a href="#why">Why Us</a>
 <a href="portfolio.html">Portfolio</a>
 <a href="blog.html">Blog</a>
-<a href="#contact">Contact</a>
+<a href="#reviews">Reviews</a>
+<a href="#faq">FAQ</a>
 
 </nav>
 </div>
 
 <a href="#home" class="logo">
 
-<svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<rect width="40" height="40" rx="11" fill="url(#kentekLogoGradient)"/>
-<path d="M10 26l7-8 5 5 10-13" stroke="white" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M25 9h7v7" stroke="white" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+<svg class="logo-mark" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 <defs>
-<linearGradient id="kentekLogoGradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-<stop stop-color="#5B9BFF"/>
-<stop offset="1" stop-color="#1D4ED8"/>
+<linearGradient id="kentekArmGrad" x1="0" y1="1" x2="1" y2="0">
+<stop offset="0%" stop-color="#1D4ED8"/>
+<stop offset="100%" stop-color="#5B9BFF"/>
 </linearGradient>
 </defs>
+<line x1="54" y1="22" x2="54" y2="138" stroke="#F5F7FA" stroke-width="30" stroke-linecap="round"/>
+<line x1="54" y1="80" x2="130" y2="24" stroke="url(#kentekArmGrad)" stroke-width="26" stroke-linecap="round"/>
+<line x1="54" y1="80" x2="130" y2="140" stroke="url(#kentekArmGrad)" stroke-width="26" stroke-linecap="round"/>
+<circle cx="54" cy="80" r="16" fill="#F5F7FA"/>
+<line x1="62" y1="72" x2="118" y2="33" stroke="#FFFFFF" stroke-opacity="0.32" stroke-width="4" stroke-linecap="round"/>
+<line x1="62" y1="88" x2="118" y2="127" stroke="#0A1A3D" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round"/>
 </svg>
 
 KENTEK <span>MEDIA</span>
@@ -154,6 +200,7 @@ Book Strategy Call
 <a href="portfolio.html">Portfolio</a>
 <a href="blog.html">Blog</a>
 <a href="about.html">About</a>
+<a href="#reviews">Reviews</a>
 <a href="#faq">FAQ</a>
 <a href="#contact">Contact</a>
 
@@ -273,6 +320,10 @@ generate quality leads and maximize return on investment.
 
 <a href="google-ads.html" class="service-card">
 
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=75&auto=format&fit=crop" alt="Google Ads performance analytics on a laptop screen" loading="lazy">
+</div>
+
 <div class="icon">
 <i class="fa-brands fa-google"></i>
 </div>
@@ -286,6 +337,10 @@ Search, Shopping, Performance Max and YouTube campaigns engineered for intent ca
 </a>
 
 <a href="meta-ads.html" class="service-card">
+
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=700&q=75&auto=format&fit=crop" alt="Meta Ads campaign management on laptop and phone" loading="lazy">
+</div>
 
 <div class="icon">
 <i class="fa-brands fa-meta"></i>
@@ -301,6 +356,10 @@ Facebook and Instagram campaigns built around creative that stops the scroll and
 
 <a href="seo-strategy.html" class="service-card">
 
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1686061593213-98dad7c599b9?w=700&q=75&auto=format&fit=crop" alt="SEO analytics dashboard on a computer screen" loading="lazy">
+</div>
+
 <div class="icon">
 <i class="fa-solid fa-magnifying-glass-chart"></i>
 </div>
@@ -314,6 +373,10 @@ Technical SEO, keyword research and authority building to increase rankings and 
 </a>
 
 <a href="web-design-development.html" class="service-card">
+
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1530435460869-d13625c69bbf?w=700&q=75&auto=format&fit=crop" alt="Website design displayed on a computer screen" loading="lazy">
+</div>
 
 <div class="icon">
 <i class="fa-solid fa-code"></i>
@@ -329,6 +392,10 @@ Fast, conversion-focused websites built to turn visitors into customers.
 
 <a href="graphic-design.html" class="service-card">
 
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=700&q=75&auto=format&fit=crop" alt="Graphic design workstation with a colour gradient on screen" loading="lazy">
+</div>
+
 <div class="icon">
 <i class="fa-solid fa-palette"></i>
 </div>
@@ -342,6 +409,10 @@ Brand-consistent visuals across social, print and campaign creative.
 </a>
 
 <a href="whatsapp-business-api.html" class="service-card">
+
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1762330469727-156f5369e4f9?w=700&q=75&auto=format&fit=crop" alt="WhatsApp Business web interface on a computer screen" loading="lazy">
+</div>
 
 <div class="icon">
 <i class="fa-brands fa-whatsapp"></i>
@@ -357,6 +428,10 @@ Automated, compliant messaging that turns WhatsApp into a real sales channel.
 
 <a href="content-creation.html" class="service-card">
 
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1695408248818-2972989d7f12?w=700&q=75&auto=format&fit=crop" alt="Content creator holding a camera and tripod" loading="lazy">
+</div>
+
 <div class="icon">
 <i class="fa-solid fa-video"></i>
 </div>
@@ -370,6 +445,10 @@ Photography, video and social content built for engagement, not just posting.
 </a>
 
 <a href="event-planning-management.html" class="service-card">
+
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=700&q=75&auto=format&fit=crop" alt="Speaker addressing a large audience at a business event" loading="lazy">
+</div>
 
 <div class="icon">
 <i class="fa-solid fa-calendar-days"></i>
@@ -385,6 +464,10 @@ End-to-end event execution, from concept to on-ground activation.
 
 <a href="ai-automation-bots.html" class="service-card">
 
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1762328862557-e0a36587cd3c?w=700&q=75&auto=format&fit=crop" alt="Smartphone screen displaying an AI assistant interface" loading="lazy">
+</div>
+
 <div class="icon">
 <i class="fa-solid fa-robot"></i>
 </div>
@@ -398,6 +481,10 @@ Custom automation and chatbots that cut response time and manual work.
 </a>
 
 <a href="brand-building.html" class="service-card">
+
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1661956600684-97d3a4320e45?w=700&q=75&auto=format&fit=crop" alt="Brand identity and branding design workspace" loading="lazy">
+</div>
 
 <div class="icon">
 <i class="fa-solid fa-award"></i>
@@ -413,6 +500,10 @@ Positioning, identity and messaging that make a brand instantly recognisable.
 
 <a href="tiktok-ads.html" class="service-card">
 
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1642141325625-f76034e4ad2b?w=700&q=75&auto=format&fit=crop" alt="TikTok displayed on screen" loading="lazy">
+</div>
+
 <div class="icon">
 <i class="fa-brands fa-tiktok"></i>
 </div>
@@ -426,6 +517,10 @@ Short-form campaigns built for a platform where attention spans are measured in 
 </a>
 
 <a href="linkedin-ads.html" class="service-card">
+
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1762330464824-21e95b769038?w=700&q=75&auto=format&fit=crop" alt="LinkedIn Ads campaign manager interface on laptop screen" loading="lazy">
+</div>
 
 <div class="icon">
 <i class="fa-brands fa-linkedin"></i>
@@ -441,6 +536,10 @@ B2B campaigns that reach decision-makers, not just impressions.
 
 <a href="influencer-marketing.html" class="service-card">
 
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1770368787766-d2f9f9037396?w=700&q=75&auto=format&fit=crop" alt="Content creator filming with a smartphone" loading="lazy">
+</div>
+
 <div class="icon">
 <i class="fa-solid fa-star"></i>
 </div>
@@ -454,6 +553,10 @@ Creator sourcing, vetting and campaign management that turns influencer partners
 </a>
 
 <a href="pr-press-coverage.html" class="service-card">
+
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1523995462485-3d171b5c8fa9?w=700&q=75&auto=format&fit=crop" alt="Bundle of newspapers on a table" loading="lazy">
+</div>
 
 <div class="icon">
 <i class="fa-solid fa-newspaper"></i>
@@ -795,6 +898,128 @@ one in our <a href="portfolio.html" style="color:#3B82F6;">case studies</a>.
 </section>
 
 <!-- ================= FAQ ================= -->
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="section" id="reviews">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>CLIENT REVIEWS</span>
+
+<h2>What Clients Say After Working With Us</h2>
+
+<p>
+Real feedback from real clients across the industries we work with.
+</p>
+
+</div>
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+
+<div class="stars">★★★★★</div>
+
+<p>"The Meta Ads campaigns Kentek Media ran for us had a direct, measurable impact on revenue. It's rare to see paid social actually move the needle this clearly for an FMCG brand."</p>
+
+<div class="client">
+<div class="avatar-initials" style="background:#3B82F6;">DB</div>
+<div>
+<h4>Daniel Brooks</h4>
+<span>FMCG</span>
+</div>
+</div>
+
+</div>
+
+<div class="testimonial-card">
+
+<div class="stars">★★★★★</div>
+
+<p>"Between the SEO work and the website redesign, everything just feels right for the brand. It's the first time our site has actually matched the quality of our product."</p>
+
+<div class="client">
+<div class="avatar-initials" style="background:#8B5CF6;">SM</div>
+<div>
+<h4>Sofia Martinez</h4>
+<span>Fashion Founder</span>
+</div>
+</div>
+
+</div>
+
+<div class="testimonial-card">
+
+<div class="stars">★★★★★</div>
+
+<p>"Our ROAS tripled after Kentek Media took over. That's not a small improvement — that's a completely different return on the same ad spend."</p>
+
+<div class="client">
+<div class="avatar-initials" style="background:#10B981;">EW</div>
+<div>
+<h4>Ethan Williams</h4>
+<span>Finance</span>
+</div>
+</div>
+
+</div>
+
+<div class="testimonial-card">
+
+<div class="stars">★★★★★</div>
+
+<p>"Sales are up 200% and our cost per acquisition actually came down at the same time. Usually you get one or the other — Kentek Media delivered both."</p>
+
+<div class="client">
+<div class="avatar-initials" style="background:#F59E0B;">AV</div>
+<div>
+<h4>Arjun Verma</h4>
+<span>Tech, Operations</span>
+</div>
+</div>
+
+</div>
+
+<div class="testimonial-card">
+
+<div class="stars">★★★★★</div>
+
+<p>"The graphic design and ad creative Kentek Media put together were sharp and consistent across every campaign. It's made our brand look far more established."</p>
+
+<div class="client">
+<div class="avatar-initials" style="background:#EC4899;">HK</div>
+<div>
+<h4>Hana Kim</h4>
+<span>Trading, Team Lead</span>
+</div>
+</div>
+
+</div>
+
+<div class="testimonial-card">
+
+<div class="stars">★★★★★</div>
+
+<p>"Google Ads combined with Google Maps optimization drove a 72% increase in bookings for us. That kind of jump is hard to argue with."</p>
+
+<div class="client">
+<div class="avatar-initials" style="background:#06B6D4;">AJ</div>
+<div>
+<h4>Amara James</h4>
+<span>Travel Manager</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <section class="section" id="faq">
 
