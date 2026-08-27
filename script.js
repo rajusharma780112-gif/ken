@@ -159,8 +159,10 @@ if(menuToggle){
 
 menuToggle.addEventListener("click",()=>{
 
-mobileMenu.classList.add("active");
-menuOverlay.classList.add("active");
+const isOpen = mobileMenu.classList.toggle("active");
+menuOverlay.classList.toggle("active", isOpen);
+menuToggle.setAttribute("aria-expanded", String(isOpen));
+document.body.style.overflow = isOpen ? "hidden" : "";
 
 });
 
@@ -172,6 +174,8 @@ menuOverlay.addEventListener("click",()=>{
 
 mobileMenu.classList.remove("active");
 menuOverlay.classList.remove("active");
+if(menuToggle) menuToggle.setAttribute("aria-expanded","false");
+document.body.style.overflow = "";
 
 });
 
@@ -183,6 +187,8 @@ link.addEventListener("click",()=>{
 
 mobileMenu.classList.remove("active");
 menuOverlay.classList.remove("active");
+if(menuToggle) menuToggle.setAttribute("aria-expanded","false");
+document.body.style.overflow = "";
 
 });
 
@@ -195,6 +201,8 @@ mobileClose.addEventListener("click",()=>{
 
 mobileMenu.classList.remove("active");
 menuOverlay.classList.remove("active");
+if(menuToggle) menuToggle.setAttribute("aria-expanded","false");
+document.body.style.overflow = "";
 
 });
 
@@ -256,3 +264,16 @@ if (portfolioCards.length) {
   }
 }
 
+
+
+// ==========================
+// RESULTS MARQUEE (seamless loop)
+// ==========================
+
+const resultsTrack = document.getElementById("resultsTrack");
+
+if(resultsTrack){
+
+resultsTrack.innerHTML += resultsTrack.innerHTML;
+
+}
