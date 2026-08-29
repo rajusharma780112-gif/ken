@@ -1957,3 +1957,17 @@ header .btn .btn-text::after{
     .service-card:hover,
     .case-card:hover{ transform:none; }
 }
+
+/* ===== CONTACT FORM STATUS ===== */
+.form-status{
+    margin-top:16px;
+    font-size:.92rem;
+    line-height:1.5;
+    min-height:1.2em;
+}
+.form-status.success{
+    color:#4ade80;
+}
+.form-status.error{
+    color:#f87171;
+}
