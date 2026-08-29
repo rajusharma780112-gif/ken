@@ -37,7 +37,7 @@ content="Kentek Media is a performance marketing agency for trading brands, also
   "name": "Kentek Media",
   "description": "Performance marketing agency for trading brands, also serving FMCG, Fintech, Fashion, Finance, Events and Wellness through SEO, performance marketing and lead generation.",
   "url": "https://www.kentekmedia.com/",
-  "email": "contact@kentekmedia.com",
+  "email": "kentekmedia@gmail.com",
   "telephone": "+91-8329064194",
   "areaServed": "Worldwide",
   "address": {
@@ -1109,8 +1109,8 @@ tailored to your business.
 
 <h3>Email</h3>
 
-<a href="mailto:contact@kentekmedia.com">
-contact@kentekmedia.com
+<a href="mailto:kentekmedia@gmail.com">
+kentekmedia@gmail.com
 </a>
 
 </div>
@@ -1181,7 +1181,7 @@ contact@kentekmedia.com
 
 <div class="contact-form">
 
-<form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<form id="contactForm" action="https://formsubmit.co/ajax/kentekmedia@gmail.com" method="POST">
 
 <input
 type="text"
@@ -1206,12 +1206,15 @@ rows="6"
 placeholder="Tell us about your project..."
 required></textarea>
 
-<!-- routes the notification email + sets a useful subject line -->
+<!-- subject line shown in your inbox -->
 <input type="hidden" name="_subject" value="New enquiry from kentekmedia.com">
-<input type="hidden" name="_replyto" value="%email%">
+<!-- send as a clean table rather than raw text -->
+<input type="hidden" name="_template" value="table">
+<!-- skip FormSubmit's own thank-you page (we handle it in JS) -->
+<input type="hidden" name="_captcha" value="false">
 
 <!-- honeypot: bots fill this, humans never see it -->
-<input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off">
+<input type="text" name="_honey" style="display:none !important;" tabindex="-1" autocomplete="off">
 
 <button type="submit" class="btn">
 
@@ -1288,8 +1291,8 @@ Performance Marketing and Lead Generation.
 
 <h4>Contact</h4>
 
-<a href="mailto:contact@kentekmedia.com">
-contact@kentekmedia.com
+<a href="mailto:kentekmedia@gmail.com">
+kentekmedia@gmail.com
 </a>
 
 
