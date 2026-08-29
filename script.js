@@ -277,3 +277,71 @@ if(resultsTrack){
 resultsTrack.innerHTML += resultsTrack.innerHTML;
 
 }
+
+
+// ==========================
+// CONTACT FORM (AJAX submit)
+// ==========================
+
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+
+if(contactForm){
+
+contactForm.addEventListener("submit", async (e) => {
+
+e.preventDefault();
+
+const btn = contactForm.querySelector('button[type="submit"]');
+const originalText = btn.textContent;
+
+btn.disabled = true;
+btn.textContent = "Sending...";
+if(formStatus){
+  formStatus.textContent = "";
+  formStatus.className = "form-status";
+}
+
+try {
+
+  const response = await fetch(contactForm.action, {
+    method: "POST",
+    body: new FormData(contactForm),
+    headers: { "Accept": "application/json" }
+  });
+
+  if(response.ok){
+
+    contactForm.reset();
+    btn.textContent = "Message Sent";
+    if(formStatus){
+      formStatus.textContent = "Thanks — we'll get back to you within one business day.";
+      formStatus.className = "form-status success";
+    }
+
+  } else {
+
+    throw new Error("Submission failed");
+
+  }
+
+} catch(err) {
+
+  btn.textContent = originalText;
+  if(formStatus){
+    formStatus.textContent = "Something went wrong. Please email us directly at contact@kentekmedia.com";
+    formStatus.className = "form-status error";
+  }
+
+} finally {
+
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.textContent = originalText;
+  }, 4000);
+
+}
+
+});
+
+}
