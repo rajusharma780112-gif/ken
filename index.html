@@ -1181,31 +1181,45 @@ contact@kentekmedia.com
 
 <div class="contact-form">
 
-<form>
+<form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
 <input
 type="text"
+name="name"
 placeholder="Your Name"
 required>
 
 <input
 type="email"
+name="email"
 placeholder="Email Address"
 required>
 
 <input
 type="text"
+name="company"
 placeholder="Company Name">
 
 <textarea
+name="message"
 rows="6"
-placeholder="Tell us about your project..."></textarea>
+placeholder="Tell us about your project..."
+required></textarea>
 
-<button class="btn">
+<!-- routes the notification email + sets a useful subject line -->
+<input type="hidden" name="_subject" value="New enquiry from kentekmedia.com">
+<input type="hidden" name="_replyto" value="%email%">
+
+<!-- honeypot: bots fill this, humans never see it -->
+<input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off">
+
+<button type="submit" class="btn">
 
 Send Message
 
 </button>
+
+<p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
 
 </form>
 
