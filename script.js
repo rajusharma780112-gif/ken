@@ -304,10 +304,16 @@ if(formStatus){
 
 try {
 
+  const formData = new FormData(contactForm);
+  const payload = Object.fromEntries(formData.entries());
+
   const response = await fetch(contactForm.action, {
     method: "POST",
-    body: new FormData(contactForm),
-    headers: { "Accept": "application/json" }
+    body: JSON.stringify(payload),
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    }
   });
 
   if(response.ok){
@@ -329,7 +335,7 @@ try {
 
   btn.textContent = originalText;
   if(formStatus){
-    formStatus.textContent = "Something went wrong. Please email us directly at contact@kentekmedia.com";
+    formStatus.textContent = "Something went wrong. Please email us directly at kentekmedia@gmail.com";
     formStatus.className = "form-status error";
   }
 
